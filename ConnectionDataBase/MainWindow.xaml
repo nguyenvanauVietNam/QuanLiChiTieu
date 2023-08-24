@@ -5,8 +5,105 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConnectionDataBase"
         mc:Ignorable="d"
-        Title="Kết nối cơ sở dữ liệu" Height="450" Width="800">
-    <Grid>
-
+        Title="Kết nối cơ sở dữ liệu" Height="500" Width="700">
+    <Grid Margin="10,5,10,5">
+        <!--Root Grid-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <!--#region Tiltle-->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <!--Tilte Windows-->
+            <Border Grid.Column="1" >
+                <TextBlock FontStyle="Oblique" Text = "Kết nối cơ sở dữ liệu" FontFamily="Arial" TextAlignment="Center" FontSize="22" VerticalAlignment="Center" Name="txtTileConnectDataBaseWindow"></TextBlock>
+            </Border>
+            <!--Logo-->
+            <Image Grid.Column="0" Source="/Resource/database-100.png"/>
+            <!--Access infor-->
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <!--Name-->
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="Xin chào" VerticalAlignment="Center" TextAlignment="Left" FontSize="13"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="0" Text="Nguyễn Văn Âu" VerticalAlignment="Center" TextAlignment="Left" FontSize="13"></TextBlock>
+                <!--Role-->
+                <TextBlock Grid.Column="0" Grid.Row="1" Text="Phân quyền" TextAlignment="Left" FontSize="13"></TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="Quản trị viên" TextAlignment="Left" FontSize="13"></TextBlock>
+            </Grid>
+        </Grid>
+        <!--#endregion Tiltle-->
+        <!--#region Body-->
+        <Grid Grid.Row="1" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <!--#endregion-->
+        <!--#region Control button-->
+        <Grid Grid.Row="2" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <!--#region Connect tion-->
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <!--Test connection-->
+                <Button Grid.Column="0" Margin="1,10,1,10" Height="30" VerticalAlignment="Top">
+                    <TextBlock Text="Kiểm tra kết nối"></TextBlock>
+                </Button>
+                <!--Autoconnect connection-->
+                <RadioButton Grid.Column="0" Margin="1,50,1,10" Height="30">
+                    <TextBlock TextAlignment="Center" Text="Tự động kết nối"></TextBlock>
+                </RadioButton>
+                <!--Result connection-->
+                <ListView Grid.Column="1" Margin="5">Kết nối thành công!!!</ListView>
+            </Grid>
+            <!--#endregion-->
+            <!--#region Connection Other-->
+            <Grid Grid.Column="2" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button FontStyle="Normal" Margin="10" Grid.Column="0">
+                    <TextBlock Text="Tạo cơ sơ dữ liệu tam" TextWrapping="Wrap"></TextBlock>
+                </Button>
+                <Button FontStyle="Normal" Margin="10" Grid.Column="1">
+                    <TextBlock Text="Xóa cơ sở dữ liệu cũ" TextWrapping="Wrap"></TextBlock>
+                </Button>
+                <Button FontStyle="Normal" Margin="10" Grid.Column="2">
+                    <TextBlock Text="Thoát" TextWrapping="Wrap"></TextBlock>
+                </Button>
+            </Grid>
+            <!--#endregion-->
+        </Grid>
+        <!--#endregion-->
     </Grid>
 </Window>
